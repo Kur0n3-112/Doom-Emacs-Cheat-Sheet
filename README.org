@@ -1,4 +1,51 @@
 #+TITLE: The Ultimate Doom Emacs Cheatsheet
+#+OPTIONS: toc:2
+
+* TABLES OF CONTENTS :toc:
+- [[#a-few-tips-for-emacs-newbies][A few tips for Emacs newbies]]
+- [[#moving-around][Moving around]]
+- [[#use-of-the-modes-normalinsert][Use of the modes (normal/insert).]]
+- [[#fast-heading-ordering][Fast heading ordering.]]
+- [[#highlight-mode][Highlight mode.]]
+- [[#folding-heading][Folding heading.]]
+- [[#indirect-narrow-buffer][Indirect narrow buffer.]]
+- [[#command-abbreviations][Command Abbreviations]]
+- [[#general][General]]
+- [[#code][Code]]
+- [[#projects-with-projectile][Projects with Projectile]]
+- [[#dired][Dired]]
+- [[#buffers-windows-and-basic-navigation][Buffers, Windows and Basic Navigation]]
+  - [[#buffers][Buffers]]
+  - [[#windows][Windows]]
+  - [[#workspaces][Workspaces]]
+- [[#installing-packages-using-org-super-agenda-as-an-example][Installing Packages using org-super-agenda as an example]]
+- [[#quick-horizontal-movements-with-evil-snipe][Quick, horizontal movements with evil-snipe]]
+  - [[#inline-navigation][Inline navigation]]
+  - [[#long-distance-navigation-inside-the-file][Long distance navigation inside the file]]
+- [[#multiple-cursor-in-emacs-with-evil-multiedit][Multiple cursor in Emacs with evil-multiedit]]
+- [[#org-mode][Org Mode]]
+  - [[#basics][Basics]]
+  - [[#links-hyperlinks-and-more][Links, Hyperlinks and more]]
+  - [[#defining-custom-link-types][Defining custom Link Types]]
+  - [[#linking-to-words--bookmarks][Linking to words & Bookmarks]]
+  - [[#code-snippets--babel][Code Snippets & Babel]]
+  - [[#task-management][Task Management]]
+  - [[#lists][Lists]]
+  - [[#checkboxes][Checkboxes]]
+- [[#magit][Magit]]
+  - [[#git-commit-flow-in-more-detail][Git Commit Flow in More Detail]]
+  - [[#magit-with-forge-for-issuing-pull-requests---emacs][Magit with Forge for Issuing Pull Requests - Emacs]]
+- [[#lsp-mode][LSP-Mode]]
+  - [[#lsp-related][LSP related]]
+  - [[#while-coding][While coding]]
+- [[#terminal][Terminal]]
+- [[#file-tree][File Tree]]
+- [[#others][Others]]
+- [[#capturing][Capturing]]
+- [[#org-roam][Org Roam]]
+- [[#code-folding][Code Folding]]
+- [[#sources][Sources]]
+- [[#what-to-learn-03][What to learn]]
 
 * A few tips for Emacs newbies
 - Use [[https://www.emacswiki.org/emacs/EmacsClient][EmacsClient]] and set up a daemon. Your Emacs experience will improve *a lot* and you will save a lot of time.
@@ -12,6 +59,50 @@
   - =SPC h f= tells you about functions and where they are defined.
 - Github doesn't render org files very well. It's best that you clone this repository and open it in Emacs.
 - See other files in this repository as well. Currently additional instructions for Go, and Python are also offered. If there's anything missing, or you can suggest a better workflow, make sure to contribute.
+* Moving around
+- =k= Move up.
+- =j= Move down.
+- =h= Move left.
+- =l= Move right.
+- =w= Move to the next word - in the begging of it.
+- =e= Move to the next word - in the end of it.
+- =b= Move to the previous word.
+- =Ctrl b= Move up the page.
+- =Ctrl f= Move down the page.
+- =g g= Go to the first line of the document.
+- =Shift g= Go to the last line of the document.
+* Use of the modes (normal/insert).
+- =i= Change to insert mode - After the cursor mark.
+- =a= Change to insert mode - Before the cursor mark.
+- =o= Add a line beneath the actual line.
+- =Ctrl o= Add a line upside of the actual line.
+- =Ctrl g= =Esc= =Enter j k= Exit insert mode.
+- =x= Is like delete key.
+- =u= Key for undo the changes.
+- =Ctrl r= Key for redo the changes.
+- =d d= Delete the current line.
+- =p= Paste the content of the clipboard.
+- =y= Copy the current word.
+- =Shift a= Go to the begging of the actual line and enter insert mode .
+- =Shift i= Go to the enf fo the actual line and enter insert mode.
+* Fast heading ordering.
+- =alt j= =alt i= Moves up or down the current line .
+- =alt h= =alt l= Moves left or left the current line .
+* Highlight mode.
+- =v= Enters highlight mode.
+- =v e= Highlight and goes to the end of the next word.
+- =v w= Highlight and goes to the begging of the next word.
+- =Ctrl v= Enter visual mode in block state.
+- =Ctrl v + Ctrl i + "insert text"= Enter visual mode in block state, then goes to the begging of the selected lines and insert the text, after exit the insert mode it is going to add the inserted text to all the highlighted lines.
+- =Shift b= Highligh all the line.
+* Folding heading.
+- =Tab= Fold the current selected heading.
+- =Shift Tab= Fold all the headings in the document.
+- =Shift Tab Shift Tab= Unfold all the heading in the current document.
+* Indirect narrow buffer.
+- =SPC b c= Opens a document in the indirect buffer mode(it opens in no real time changes, it means that it is like two same files).
+- =SPC m s n= It swallows all the document and only show the current paragraph lines.
+- =SPC m s N= Comes to the normal mode of the =SPC m s n= mode.
 * Command Abbreviations
 - =C= - "Control" key
 - =M= - "Alt" or "Option" key
@@ -22,6 +113,8 @@
 - =SPC := for entering a command
 - =SPC q q= to close Emacs
 - =SPC f D= to delete this file
+* Code
+ - =C-c .= - c-set-style -- Set a the tabulation style on the file.
 * Projects with Projectile
 - =SPC p p= to open a project
 - =SPC SPC= to open a file in a project
@@ -324,6 +417,7 @@ Code folding helps with code readability. First, make sure =fold= is not comment
 - [[https://www.ianjones.us/zaiste-programming-doom-emacs-tutorial/#org7ad2452][This org file is mostly from the notes taken from the series above by ianjones.us]]
 - [[https://github.com/doomemacs/doomemacs][Doom Emacs Documentation]]
 - [[https://www.youtube.com/watch?v=s0ed8Da3mjE][Three Huge Mistakes New Emacs Users Make]] (they are included in the tips in the beginning of the file)
+- [[https://youtu.be/WyQ4zEo8_Ig?si=8vLz4grQuVZteUjQ][Link to a youtube basics of emacs]]
 
 * What to learn [0/3]
 - [ ] LSP
